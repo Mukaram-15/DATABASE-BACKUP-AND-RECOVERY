@@ -1,4 +1,0 @@
-mysqldump -u your_username -p your_database_name > /path/to/backup/your_backup.sql
-mysql -u your_username -p your_database_name < /path/to/backup/your_backup.sql
-pg_dump -U your_username -W -F c -b -v -f /path/to/backup/your_backup.dump your_database_name
-pg_restore -U your_username -W -d your_database_name /path/to/backup/your_backup.dump

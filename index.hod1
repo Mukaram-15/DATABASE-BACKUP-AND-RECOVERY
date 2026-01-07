@@ -1,0 +1,28 @@
+-- ===============================
+-- DATABASE BACKUP AND RECOVERY
+-- FULLY COMBINED SCRIPT
+-- ===============================
+
+-- STEP 1: CREATE DATABASE AND TABLE
+CREATE DATABASE IF NOT EXISTS company_db;
+USE company_db;
+
+DROP TABLE IF EXISTS employees;
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(50),
+    salary DECIMAL(10,2)
+);
+
+INSERT INTO employees VALUES
+(1, 'Rahul', 'IT', 60000),
+(2, 'Anita', 'HR', 50000),
+(3, 'Vikram', 'Finance', 65000);
+
+SELECT 'DATA BEFORE BACKUP' AS status;
+SELECT * FROM employees;
+
+-- STEP 2: SIMULATE FAILURE
+DROP DATABASE company_db;
